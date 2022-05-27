@@ -1,3 +1,5 @@
+//Object.create()
+
 function DogObject(name, age) {
   let dog = Object.create(constructorObject);
   dog.name = name;

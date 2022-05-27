@@ -1,0 +1,3 @@
+function Animal (age, name,) {
+  
+}
