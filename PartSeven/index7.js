@@ -1,6 +1,15 @@
-function Animal(name, age) {
+function Animal (name, age) {
   let newAnimal = Object.create(animalConstructor);
-  newAnimal.name = name;
-  newAnimal.age = age;
+  newAnimal.name = this.name;
+  newAnimal.age = this.age;
   return newAnimal;
 }
+ let animalConstructor = {
+   sign: function() {
+     return `This ${this.name} can sign`
+   },
+
+   dance: function() {
+     return `This ${this.name} can dance`
+   }
+ }
