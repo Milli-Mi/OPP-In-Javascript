@@ -1,4 +1,4 @@
-function Animal (name, age) {
+function Animals (name, age) {
   let newAnimal = Object.create(animalConstructor);
   newAnimal.name = this.name;
   newAnimal.age = this.age;
@@ -12,4 +12,9 @@ function Animal (name, age) {
    dance: function() {
      return `This ${this.name} can dance`
    }
+ }
+
+ function Cats (name, age, whiskerColor) {
+   let newCat =  Animals(name, age);
+   
  }
