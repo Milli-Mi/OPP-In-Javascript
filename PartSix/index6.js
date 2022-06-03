@@ -12,7 +12,8 @@ class Animalss {
   }
 }
 
-class Cats extends Animalss {
+class Cats extends Animalss { 
+  
   constructor(name, age, whiskers) {
     super(name, age);
     this.whiskers = whiskers;
