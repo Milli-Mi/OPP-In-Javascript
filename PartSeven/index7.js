@@ -1,20 +1,32 @@
-function Animals (name, age) {
+function Animals(name, age) {
   let newAnimal = Object.create(animalConstructor);
-  newAnimal.name = this.name;
-  newAnimal.age = this.age;
+  newAnimal.name = name;
+  newAnimal.age = age;
   return newAnimal;
 }
- let animalConstructor = {
-   sign: function() {
-     return `This ${this.name} can sign`
-   },
-
-   dance: function() {
-     return `This ${this.name} can dance`
-   }
- }
-
- function Cats (name, age, whiskerColor) {
-   let newCat =  Animals(name, age);
-   
- }
+let animalConstructor = {
+  sing: function() {
+      return `${this.name} can sing`;
+  },
+  dance: function() {
+      return `${this.name} can dance`;
+  }
+}
+function Cats(name, age, whiskerColor) {
+  let newCat = Animals(name, age);
+  Object.setPrototypeOf(newCat, catConstructor);
+  newCat.whiskerColor = whiskerColor;
+  return newCat;
+}
+let catConstructor = {
+  whiskers() {
+      return `I have ${this.whiskerColor} whiskers`;
+  }
+}
+Object.setPrototypeOf(catConstructor, animalConstructor);
+const clara = Cats("Clara", 33, "purple");
+clara.sing();
+clara.whiskers();
+// Expected Output
+// "Clara can sing"
+// "I have purple whiskers"
